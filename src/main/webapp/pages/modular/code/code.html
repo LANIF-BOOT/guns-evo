@@ -1,4 +1,4 @@
-@layout("/common/_container.html",{js:["/assets/modular/system/log/log.js"]}){
+@layout("/common/_container.html",{js:["/assets/modular/code/code.js"]}){
 
 <div class="layui-body-header">
 	<span class="layui-body-header-title">代码生成</span>
@@ -113,15 +113,4 @@
 	</div>
 </div>
 @}
-<script>
-//Demo
-layui.use('form', function(){
-  var form = layui.form;
-  
-  //监听提交
-  form.on('submit(formDemo)', function(data){
-    layer.msg(JSON.stringify(data.field));
-    return false;
-  });
-});
-</script>
+
