@@ -88,7 +88,7 @@
                                 <label class="layui-form-label">数据表</label>
                                 <div class="layui-input-block">
                                     @for(table in tables!){
-                                        <a href="javascript:void(0)" class="list-group-item" tableName="${table.tableName}" onclick="Code.selectTable('${table.tableName}')">${table.tableName}-${table.tableComment}</a>
+                                        <input type="radio" name="tableName" value="${table.tableName}" title="${table.tableName}-${table.tableComment}">
                                     @}
                                 </div>
                             </div>
@@ -96,7 +96,7 @@
                                 <label class="layui-form-label">可用模板</label>
                                 <div class="layui-input-block">
                                     @for(template in templates!){
-                                        <input type="checkbox" name="" title="${template.desc}"> 
+                                        <input type="checkbox" name="templateName" title="${template.desc}" checked="" > 
                                     @}
                                 </div>
                             </div>
