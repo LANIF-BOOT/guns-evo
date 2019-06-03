@@ -13,5 +13,11 @@ import org.springframework.context.annotation.Configuration;
  * @author fengshuonan
  * @date 2018-10-09-下午3:27
  */
+@Configuration
 public class GeneratorAutoConfiguration {
+
+//    @Bean
+//    public DbInitializer dbInitializer() {
+//        return new DbInfoInitializer();
+//    }
 }

@@ -1,6 +1,6 @@
 package cn.stylefeng.guns.generator.executor.config;
 
-import com.baomidou.mybatisplus.generator.config.rules.DbType;
+import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 
 /**

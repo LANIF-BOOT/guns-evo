@@ -1,12 +1,13 @@
 package cn.stylefeng.guns.generator.executor.config;
 
-import cn.hutool.core.util.StrUtil;
-import cn.stylefeng.roses.core.util.ToolUtil;
-import com.baomidou.mybatisplus.generator.config.rules.DbType;
-import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
-import cn.stylefeng.guns.generator.executor.model.GenQo;
-
 import java.io.File;
+
+import com.baomidou.mybatisplus.annotation.DbType;
+import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
+
+import cn.hutool.core.util.StrUtil;
+import cn.stylefeng.guns.generator.executor.model.GenQo;
+import cn.stylefeng.roses.core.util.ToolUtil;
 
 /**
  * 默认的代码生成的配置
