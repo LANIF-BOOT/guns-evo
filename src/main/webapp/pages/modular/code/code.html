@@ -16,21 +16,21 @@
                                     <label class="layui-form-label">项目路径</label>
                                     <div class="layui-input-block">
                                         <input name="projectPath" placeholder="项目路径" type="text"
-                                            class="layui-input" autocomplete="off" />
+                                            class="layui-input" autocomplete="off" value="${params.projectPath}" />
                                     </div>
                                 </div>
                                 <div class="layui-col-sm4">
                                     <label class="layui-form-label">项目的包</label>
                                     <div class="layui-input-block">
                                         <input name="projectPackage" placeholder="项目的包" type="text"
-                                            class="layui-input" autocomplete="off" />
+                                            class="layui-input" autocomplete="off" value="${params.projectPackage}" />
                                     </div>
                                 </div>
                                 <div class="layui-col-sm4">
                                     <label class="layui-form-label">核心包</label>
                                     <div class="layui-input-block">
                                         <input name="corePackage" placeholder="核心包" type="text"
-                                            class="layui-input" autocomplete="off" />
+                                            class="layui-input" autocomplete="off" value="${params.corePackage}" />
                                     </div>
                                 </div>
                             </div>
@@ -48,14 +48,14 @@
                                     <label class="layui-form-label">模块名称</label>
                                     <div class="layui-input-block">
                                         <input name="moduleName" placeholder="模块名称" type="text"
-                                            class="layui-input" autocomplete="off" />
+                                            class="layui-input" autocomplete="off" value="${params.moduleName}" />
                                     </div>
                                 </div>
                                 <div class="layui-col-sm4">
                                     <label class="layui-form-label">父级名称</label>
                                     <div class="layui-input-block">
                                         <input name="parentMenuName" placeholder="父级菜单名称" type="text"
-                                            class="layui-input" autocomplete="off" />
+                                            class="layui-input" autocomplete="off" value="${params.parentMenuName}" />
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
                                         <label class="layui-form-label">表前缀</label>
                                         <div class="layui-input-block">
                                             <input name="ignoreTabelPrefix" placeholder="表前缀" type="text"
-                                                class="layui-input" autocomplete="off" />
+                                                class="layui-input" autocomplete="off" value="${params.ignoreTabelPrefix}" />
                                         </div>
                                     </div>
                                     <div class="layui-col-sm4">
@@ -96,7 +96,7 @@
                                 <label class="layui-form-label">可用模板</label>
                                 <div class="layui-input-block">
                                     @for(template in templates!){
-                                        <input type="checkbox" name="templateName" title="${template.desc}" checked="" > 
+                                        <input type="checkbox" name="templateName" value="${template.key}" title="${template.desc}" checked="" > 
                                     @}
                                 </div>
                             </div>
