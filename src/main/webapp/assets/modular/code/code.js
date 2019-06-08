@@ -6,6 +6,11 @@ layui.use(['layer', 'form', 'ax'], function () {
     
     //监听提交
     form.on('submit(formDemo)', function(data){
+      var template = [];
+      $("#codeForm input[name=templateName]:checked").each(function() {
+    	  template.push($(this).val())
+      })
+      data.field.templateName = template.join(",");
       layer.msg(JSON.stringify(data.field));
       return false;
     });

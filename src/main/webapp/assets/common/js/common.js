@@ -83,6 +83,14 @@ Feng.zTreeCheckedNodes = function (zTreeId) {
 Feng.closeAllLoading = function () {
     layer.closeAll('loading');
 };
+Feng.underLineToCamel = function (str) {
+    var strArr = str.split('_');
+    for (var i = 1; i < strArr.length; i++) {
+        strArr[i] = strArr[i].charAt(0).toUpperCase() + strArr[i].substring(1);
+    }
+    var result = strArr.join('');
+    return result.charAt(0).toUpperCase() + result.substring(1);
+};
 
 // 以下代码是配置layui扩展模块的目录，每个页面都需要引入
 layui.config({
