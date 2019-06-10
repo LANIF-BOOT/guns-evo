@@ -87,9 +87,12 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label">数据表</label>
                                 <div class="layui-input-block">
-                                    @for(table in tables!){
-                                        <input type="radio" name="tableName" value="${table.tableName}" title="${table.tableName}-${table.tableComment}">
-                                    @}
+                                    <select name="tableName">
+                                        <option value=""></option>
+                                        @for(table in tables!){
+                                            <option value="${table.tableName}">${table.tableName}-${table.tableComment}</option>
+                                        @}
+                                    </select>
                                 </div>
                             </div>
                             <div class="layui-form-item">
