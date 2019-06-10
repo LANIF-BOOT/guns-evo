@@ -4,14 +4,20 @@ layui.use(['layer', 'form', 'ax'], function () {
     var layer = layui.layer;
     var form = layui.form;
     
+    form.on('select(tableName)', function(data){
+		console.log(data);
+		var preSize = $("#ignoreTabelPrefix").val().length;
+	    $("#tableName").val(data.value);
+	    $("#className").val(Feng.underLineToCamel(data.value.substring(preSize)));
+	});
+    
     //监听提交
     form.on('submit(formDemo)', function(data){
-      var template = [];
       $("#codeForm input[name=templateName]:checked").each(function() {
-    	  template.push($(this).val())
+    	  data.field[$(this).val()] = true;
       })
-      data.field.templateName = template.join(",");
       layer.msg(JSON.stringify(data.field));
+      console.log(data.field)
       return false;
     });
 });

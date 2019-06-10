@@ -64,21 +64,21 @@
                                     <div class="layui-col-sm4">
                                         <label class="layui-form-label">表名称</label>
                                         <div class="layui-input-block">
-                                            <input name="tableName" placeholder="表名称" type="text"
+                                            <input name="tableName" id="tableName" placeholder="表名称" type="text"
                                                 class="layui-input" autocomplete="off" disabled />
                                         </div>
                                     </div>
                                     <div class="layui-col-sm4">
                                         <label class="layui-form-label">表前缀</label>
                                         <div class="layui-input-block">
-                                            <input name="ignoreTabelPrefix" placeholder="表前缀" type="text"
+                                            <input name="ignoreTabelPrefix" id="ignoreTabelPrefix" placeholder="表前缀" type="text"
                                                 class="layui-input" autocomplete="off" value="${params.ignoreTabelPrefix}" />
                                         </div>
                                     </div>
                                     <div class="layui-col-sm4">
                                         <label class="layui-form-label">类名</label>
                                         <div class="layui-input-block">
-                                            <input name="className" placeholder="类名" type="text"
+                                            <input name="className" id="className" placeholder="类名" type="text"
                                                 class="layui-input" autocomplete="off" disabled />
                                         </div>
                                     </div>
@@ -87,7 +87,7 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label">数据表</label>
                                 <div class="layui-input-block">
-                                    <select name="tableName">
+                                    <select name="tableName" lay-filter="tableName">
                                         <option value=""></option>
                                         @for(table in tables!){
                                             <option value="${table.tableName}">${table.tableName}-${table.tableComment}</option>
