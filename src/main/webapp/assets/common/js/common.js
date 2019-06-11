@@ -91,6 +91,30 @@ Feng.underLineToCamel = function (str) {
     var result = strArr.join('');
     return result.charAt(0).toUpperCase() + result.substring(1);
 };
+Feng.showInputTree = function (inputId, inputTreeContentId, leftOffset, rightOffset) {
+    var onBodyDown = function (event) {
+        if (!(event.target.id == "menuBtn" || event.target.id == inputTreeContentId || $(event.target).parents("#" + inputTreeContentId).length > 0)) {
+            $("#" + inputTreeContentId).fadeOut("fast");
+            $("body").unbind("mousedown", onBodyDown);// mousedown当鼠标按下就可以触发，不用弹起
+        }
+    };
+
+    if (leftOffset == undefined && rightOffset == undefined) {
+        var inputDiv = $("#" + inputId);
+        var inputDivOffset = $("#" + inputId).offset();
+        $("#" + inputTreeContentId).css({
+            left: inputDivOffset.left + "px",
+            top: inputDivOffset.top + inputDiv.outerHeight() + "px"
+        }).slideDown("fast");
+    } else {
+        $("#" + inputTreeContentId).css({
+            left: leftOffset + "px",
+            top: rightOffset + "px"
+        }).slideDown("fast");
+    }
+
+    $("body").bind("mousedown", onBodyDown);
+};
 
 // 以下代码是配置layui扩展模块的目录，每个页面都需要引入
 layui.config({
