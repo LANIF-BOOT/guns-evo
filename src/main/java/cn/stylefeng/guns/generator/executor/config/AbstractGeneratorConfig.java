@@ -9,6 +9,8 @@ import com.baomidou.mybatisplus.generator.config.GlobalConfig;
 import com.baomidou.mybatisplus.generator.config.PackageConfig;
 import com.baomidou.mybatisplus.generator.config.StrategyConfig;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
+import com.baomidou.mybatisplus.generator.engine.BeetlTemplateEngine;
+
 import cn.stylefeng.guns.generator.engine.SimpleTemplateEngine;
 import cn.stylefeng.guns.generator.engine.config.ContextConfig;
 
@@ -88,6 +90,7 @@ public abstract class AbstractGeneratorConfig {
         autoGenerator.setDataSource(dataSourceConfig);
         autoGenerator.setStrategy(strategyConfig);
         autoGenerator.setPackageInfo(packageConfig);
+        autoGenerator.setTemplateEngine(new BeetlTemplateEngine());
         autoGenerator.execute();
         destory();
 
