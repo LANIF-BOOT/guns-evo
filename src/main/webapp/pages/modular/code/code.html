@@ -1,4 +1,4 @@
-@layout("/common/_container.html",{plugins:["ztree"],js:["/assets/modular/code/code.js"]}){
+@layout("/common/_container.html",{plugins:["ztree"],js:["/assets/modular/code/code.js"],css:["/assets/modular/code/code.css"]}){
 
 <div class="layui-body-header">
     <span class="layui-body-header-title">代码生成</span>
@@ -64,6 +64,21 @@
                             </div>
                             <div class="layui-form-item">
                                 <div class="layui-row layui-col-space10">
+                                    <div class="layui-col-sm12">
+                                        <label class="layui-form-label">数据表</label>
+                                        <div class="layui-input-block">
+                                            <select name="tableName" lay-filter="tableName">
+                                                <option value=""></option>
+                                                @for(table in tables!){
+                                                    <option value="${table.tableName}">${table.tableName}-${table.tableComment}</option>
+                                                @}
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-row layui-col-space10">
                                     <div class="layui-col-sm4">
                                         <label class="layui-form-label">表名称</label>
                                         <div class="layui-input-block">
@@ -85,17 +100,6 @@
                                                 class="layui-input" autocomplete="off" disabled />
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="layui-form-item">
-                                <label class="layui-form-label">数据表</label>
-                                <div class="layui-input-block">
-                                    <select name="tableName" lay-filter="tableName">
-                                        <option value=""></option>
-                                        @for(table in tables!){
-                                            <option value="${table.tableName}">${table.tableName}-${table.tableComment}</option>
-                                        @}
-                                    </select>
                                 </div>
                             </div>
                             <div class="layui-form-item">

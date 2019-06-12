@@ -1,4 +1,4 @@
-layui.use(["layer", 'ztree', "form", "ax"], function() {
+layui.use(["layer", "ztree", "form", "ax"], function() {
   var $ = layui.$;
   var $ax = layui.ax;
   var layer = layui.layer;
@@ -17,8 +17,10 @@ layui.use(["layer", 'ztree', "form", "ax"], function() {
     $("#codeForm input[name=templateName]:checked").each(function() {
       data.field[$(this).val()] = true;
     });
-    layer.msg(JSON.stringify(data.field));
-    console.log(data.field);
+
+    $.post("/code/generate", data.field, function() {
+      layer.msg("代码自动创建完成！");
+    });
     return false;
   });
 
@@ -26,8 +28,7 @@ layui.use(["layer", 'ztree', "form", "ax"], function() {
    * 初始化
    */
   var Code = {
-    ztreeInstance: null,
-    submitData: {}
+    ztreeInstance: null
   };
 
   /**
@@ -43,7 +44,6 @@ layui.use(["layer", 'ztree', "form", "ax"], function() {
   Code.ztreeInstance = ztree;
   $("#pcodeTree").css("width", $("#parentMenuName").css("width"));
   $("#parentMenuName").click(function() {
-    alert(11)
-    Feng.showInputTree("parentMenuName", "pcodeTreeDiv", 15, 34);
-  })
+    Feng.showInputTree("parentMenuName", "pcodeTreeDiv", 0, 38);
+  });
 });
