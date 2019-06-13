@@ -27,6 +27,9 @@ public class ControllerConfig {
         imports.add("org.springframework.web.bind.annotation.RequestParam");
         imports.add("cn.stylefeng.roses.core.reqres.response.ResponseData");
         imports.add("cn.stylefeng.roses.core.base.controller.BaseController");
+        imports.add("cn.stylefeng.roses.kernel.model.exception.RequestEmptyException");
+        imports.add("cn.stylefeng.guns.core.common.page.LayuiPageFactory");
+        imports.add("cn.stylefeng.roses.core.util.ToolUtil");
         imports.add(contextConfig.getModelPackageName() + "." + contextConfig.getEntityName());
         imports.add(contextConfig.getProPackage() + ".modular." + contextConfig.getModuleName() + ".service" + ".I" + contextConfig.getEntityName() + "Service");
         this.imports = imports;

@@ -37,11 +37,12 @@ public class ${context.bizEnBigName}Controller extends BaseController {
     /**
      * 跳转到修改${context.bizChName}
      */
-    @RequestMapping("/${context.bizEnName}_update/{${context.bizEnName}Id}")
-    public String ${context.bizEnName}Update(@PathVariable Integer ${context.bizEnName}Id, Model model) {
-        ${context.entityName} ${context.bizEnName} = ${context.bizEnName}Service.selectById(${context.bizEnName}Id);
-        model.addAttribute("item",${context.bizEnName});
-        LogObjectHolder.me().set(${context.bizEnName});
+    @RequestMapping("/${context.bizEnName}_update")
+    public String ${context.bizEnName}Update(@RequestParam("${context.bizEnName}Id") Long ${context.bizEnName}Id) {
+        if (ToolUtil.isEmpty(${context.bizEnName}Id)) {
+            throw new RequestEmptyException();
+        }
+
         return PREFIX + "${context.bizEnName}_edit.html";
     }
 
@@ -49,15 +50,19 @@ public class ${context.bizEnBigName}Controller extends BaseController {
      * 获取${context.bizChName}列表
      */
     @RequestMapping(value = "/list")
+    @Permission
     @ResponseBody
-    public Object list(String condition) {
-        return ${context.bizEnName}Service.selectList(null);
+    public Object list(@RequestParam(value = "condition", required = false) String condition,
+                       @RequestParam(value = "${context.bizEnName}Id", required = false) Long ${context.bizEnName}Id) {
+        Page<Map<String, Object>> list = this.${context.bizEnName}Service.list(condition, ${context.bizEnName}Id);
+        return LayuiPageFactory.createPageInfo(list);
     }
 
     /**
      * 新增${context.bizChName}
      */
     @RequestMapping(value = "/add")
+    @Permission
     @ResponseBody
     public Object add(${context.entityName} ${context.bizEnName}) {
         ${context.bizEnName}Service.insert(${context.bizEnName});
