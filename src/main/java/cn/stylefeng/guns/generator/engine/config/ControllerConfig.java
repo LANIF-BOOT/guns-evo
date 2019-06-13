@@ -19,15 +19,14 @@ public class ControllerConfig {
 
     public void init() {
         ArrayList<String> imports = new ArrayList<>();
-        imports.add("cn.stylefeng.roses.core.base.controller.BaseController");
         imports.add("org.springframework.stereotype.Controller");
         imports.add("org.springframework.web.bind.annotation.RequestMapping");
         imports.add("org.springframework.web.bind.annotation.ResponseBody");
-        imports.add("org.springframework.ui.Model");
         imports.add("org.springframework.web.bind.annotation.PathVariable");
         imports.add("org.springframework.beans.factory.annotation.Autowired");
-        imports.add(contextConfig.getProPackage() + ".core.log.LogObjectHolder");
         imports.add("org.springframework.web.bind.annotation.RequestParam");
+        imports.add("cn.stylefeng.roses.core.reqres.response.ResponseData");
+        imports.add("cn.stylefeng.roses.core.base.controller.BaseController");
         imports.add(contextConfig.getModelPackageName() + "." + contextConfig.getEntityName());
         imports.add(contextConfig.getProPackage() + ".modular." + contextConfig.getModuleName() + ".service" + ".I" + contextConfig.getEntityName() + "Service");
         this.imports = imports;

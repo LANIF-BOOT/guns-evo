@@ -11,7 +11,7 @@ import cn.hutool.core.util.StrUtil;
  */
 public class ContextConfig {
 
-    private String templatePrefixPath = "gunsTemplate/advanced";
+    private String templatePrefixPath = "codeTemplates"; //"gunsTemplate/advanced";
     private String projectPath = "D:\\ideaSpace\\guns";//模板输出的项目目录
     private String bizChName;   //业务名称
     private String bizEnName;   //业务英文名称
@@ -20,8 +20,8 @@ public class ContextConfig {
 
     private String proPackage = "cn.stylefeng.guns.admin";
     private String coreBasePackage = "cn.stylefeng.guns.core";
-    private String modelPackageName = "cn.stylefeng.guns.modular.system.model";        //model的包名
-    private String modelMapperPackageName = "cn.stylefeng.guns.modular.system.dao";    //model的dao
+    private String modelPackageName = "cn.stylefeng.guns.modular.system.entity";        //model的包名
+    private String modelMapperPackageName = "cn.stylefeng.guns.modular.system.mapper";    //model的dao
     private String entityName;              //实体的名称
 
     private Boolean controllerSwitch = true;    //是否生成控制器代码开关
@@ -39,8 +39,8 @@ public class ContextConfig {
         if (entityName == null) {
             entityName = bizEnBigName;
         }
-        modelPackageName = proPackage + "." + "modular.system.model";
-        modelMapperPackageName = proPackage + "." + "modular.system.dao";
+        modelPackageName = proPackage + "." + "modular.system.entity";
+        modelMapperPackageName = proPackage + "." + "modular.system.mapper";
     }
 
     public String getBizEnBigName() {
