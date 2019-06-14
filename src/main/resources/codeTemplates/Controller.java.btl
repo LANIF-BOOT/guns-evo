@@ -65,7 +65,7 @@ public class ${context.bizEnBigName}Controller extends BaseController {
     @Permission
     @ResponseBody
     public Object add(${context.entityName} ${context.bizEnName}) {
-        ${context.bizEnName}Service.insert(${context.bizEnName});
+        ${context.bizEnName}Service.save(${context.bizEnName});
         return SUCCESS_TIP;
     }
 
@@ -73,9 +73,10 @@ public class ${context.bizEnBigName}Controller extends BaseController {
      * 删除${context.bizChName}
      */
     @RequestMapping(value = "/delete")
+    @Permission
     @ResponseBody
     public Object delete(@RequestParam Integer ${context.bizEnName}Id) {
-        ${context.bizEnName}Service.deleteById(${context.bizEnName}Id);
+        ${context.bizEnName}Service.removeById(${context.bizEnName}Id);
         return SUCCESS_TIP;
     }
 
@@ -83,6 +84,7 @@ public class ${context.bizEnBigName}Controller extends BaseController {
      * 修改${context.bizChName}
      */
     @RequestMapping(value = "/update")
+    @Permission
     @ResponseBody
     public Object update(${context.entityName} ${context.bizEnName}) {
         ${context.bizEnName}Service.updateById(${context.bizEnName});
@@ -95,6 +97,7 @@ public class ${context.bizEnBigName}Controller extends BaseController {
     @RequestMapping(value = "/detail/{${context.bizEnName}Id}")
     @ResponseBody
     public Object detail(@PathVariable("${context.bizEnName}Id") Integer ${context.bizEnName}Id) {
-        return ${context.bizEnName}Service.selectById(${context.bizEnName}Id);
+        ${context.entityName} ${context.bizEnName} = this.${context.bizEnName}Service.getById(${context.bizEnName}Id);
+        return ResponseData.success(${context.bizEnName});
     }
 }
