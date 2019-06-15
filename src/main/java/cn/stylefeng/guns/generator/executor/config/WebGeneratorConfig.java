@@ -1,8 +1,12 @@
 package cn.stylefeng.guns.generator.executor.config;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.baomidou.mybatisplus.annotation.DbType;
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.generator.config.po.TableFill;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 
 import cn.hutool.core.util.StrUtil;
@@ -43,7 +47,8 @@ public class WebGeneratorConfig extends AbstractGeneratorConfig {
         globalConfig.setBaseResultMap(true);
         globalConfig.setBaseColumnList(true);
         globalConfig.setOpen(false);
-        globalConfig.setAuthor(genQo.getAuthor());
+        globalConfig.setActiveRecord(true);
+        
         contextConfig.setProPackage(genQo.getProjectPackage());
         contextConfig.setCoreBasePackage(genQo.getCorePackage());
 
@@ -53,8 +58,14 @@ public class WebGeneratorConfig extends AbstractGeneratorConfig {
         if (genQo.getIgnoreTabelPrefix() != null) {
             strategyConfig.setTablePrefix(new String[]{genQo.getIgnoreTabelPrefix()});
         }
+     // 自定义需要填充的字段
+        List<TableFill> tableFillList = new ArrayList<>();
+        tableFillList.add(new TableFill("create_time", FieldFill.INSERT_UPDATE));
+        
         strategyConfig.setInclude(new String[]{genQo.getTableName()});
         strategyConfig.setNaming(NamingStrategy.underline_to_camel);
+//        strategyConfig.setTableFillList(tableFillList);
+        
 //        strategyConfig.setEntityTableFieldAnnotationEnable(true);
         packageConfig.setParent(null);
         packageConfig.setEntity(genQo.getProjectPackage() + ".modular.system.entity");
