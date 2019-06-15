@@ -58,13 +58,17 @@ public class WebGeneratorConfig extends AbstractGeneratorConfig {
         if (genQo.getIgnoreTabelPrefix() != null) {
             strategyConfig.setTablePrefix(new String[]{genQo.getIgnoreTabelPrefix()});
         }
-     // 自定义需要填充的字段
+        
+        // 自定义需要填充的字段
         List<TableFill> tableFillList = new ArrayList<>();
-        tableFillList.add(new TableFill("create_time", FieldFill.INSERT_UPDATE));
+        tableFillList.add(new TableFill("create_time", FieldFill.INSERT));
+        tableFillList.add(new TableFill("update_time", FieldFill.UPDATE));
+        tableFillList.add(new TableFill("create_user", FieldFill.INSERT));
+        tableFillList.add(new TableFill("update_user", FieldFill.UPDATE));
+        strategyConfig.setTableFillList(tableFillList);
         
         strategyConfig.setInclude(new String[]{genQo.getTableName()});
         strategyConfig.setNaming(NamingStrategy.underline_to_camel);
-//        strategyConfig.setTableFillList(tableFillList);
         
 //        strategyConfig.setEntityTableFieldAnnotationEnable(true);
         packageConfig.setParent(null);
