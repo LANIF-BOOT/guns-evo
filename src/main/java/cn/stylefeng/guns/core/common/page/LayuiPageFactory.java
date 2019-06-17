@@ -28,6 +28,8 @@ import javax.servlet.http.HttpServletRequest;
  * @date 2017-04-05 22:25
  */
 public class LayuiPageFactory {
+	private static int DEFAULT_LIMIT = 10;
+	private static int DEFAULT_PAGE = 1;
 
     /**
      * 获取layui table的分页参数
@@ -39,10 +41,12 @@ public class LayuiPageFactory {
         HttpServletRequest request = HttpContext.getRequest();
 
         //每页多少条数据
-        int limit = Integer.valueOf(request.getParameter("limit"));
+        int limit = request.getParameter("limit") == null ? 
+        		DEFAULT_LIMIT : Integer.valueOf(request.getParameter("limit"));
 
         //第几页
-        int page = Integer.valueOf(request.getParameter("page"));
+        int page = request.getParameter("page") == null ? 
+        		DEFAULT_PAGE : Integer.valueOf(request.getParameter("page"));
 
         return new Page(page, limit);
     }

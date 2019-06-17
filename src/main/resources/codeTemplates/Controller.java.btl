@@ -50,11 +50,11 @@ public class ${context.bizEnBigName}Controller extends BaseController {
      * 获取${context.bizChName}列表
      */
     @RequestMapping(value = "/list")
-    @Permission
     @ResponseBody
-    public Object list(@RequestParam(value = "condition", required = false) String condition,
-                       @RequestParam(value = "${context.bizEnName}Id", required = false) Long ${context.bizEnName}Id) {
-        Page<Map<String, Object>> list = this.${context.bizEnName}Service.list(condition, ${context.bizEnName}Id);
+    public Object list(@RequestParam(value = "condition", required = false) String condition) {
+        Page page = LayuiPageFactory.defaultPage();
+    	QueryWrapper<${context.entityName}> objectQueryWrapper = new QueryWrapper<>();
+        IPage<${context.entityName}> list = this.${context.bizEnName}Service.page(page, objectQueryWrapper);
         return LayuiPageFactory.createPageInfo(list);
     }
 
@@ -62,7 +62,6 @@ public class ${context.bizEnBigName}Controller extends BaseController {
      * 新增${context.bizChName}
      */
     @RequestMapping(value = "/add")
-    @Permission
     @ResponseBody
     public Object add(${context.entityName} ${context.bizEnName}) {
         ${context.bizEnName}Service.save(${context.bizEnName});
@@ -73,7 +72,6 @@ public class ${context.bizEnBigName}Controller extends BaseController {
      * 删除${context.bizChName}
      */
     @RequestMapping(value = "/delete")
-    @Permission
     @ResponseBody
     public Object delete(@RequestParam Integer ${context.bizEnName}Id) {
         ${context.bizEnName}Service.removeById(${context.bizEnName}Id);
@@ -84,7 +82,6 @@ public class ${context.bizEnBigName}Controller extends BaseController {
      * 修改${context.bizChName}
      */
     @RequestMapping(value = "/update")
-    @Permission
     @ResponseBody
     public Object update(${context.entityName} ${context.bizEnName}) {
         ${context.bizEnName}Service.updateById(${context.bizEnName});

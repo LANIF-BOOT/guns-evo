@@ -25,12 +25,13 @@ public class ControllerConfig {
         imports.add("org.springframework.web.bind.annotation.PathVariable");
         imports.add("org.springframework.beans.factory.annotation.Autowired");
         imports.add("org.springframework.web.bind.annotation.RequestParam");
+        imports.add("com.baomidou.mybatisplus.core.conditions.query.QueryWrapper");
+        imports.add("com.baomidou.mybatisplus.core.metadata.IPage");
         imports.add("com.baomidou.mybatisplus.extension.plugins.pagination.Page");
         imports.add("cn.stylefeng.roses.core.reqres.response.ResponseData");
         imports.add("cn.stylefeng.roses.core.base.controller.BaseController");
         imports.add("cn.stylefeng.roses.kernel.model.exception.RequestEmptyException");
         imports.add("cn.stylefeng.guns.core.common.page.LayuiPageFactory");
-        imports.add("cn.stylefeng.guns.core.common.annotion.Permission");
         imports.add("cn.stylefeng.roses.core.util.ToolUtil");
         imports.add(contextConfig.getModelPackageName() + "." + contextConfig.getEntityName());
         imports.add(contextConfig.getProPackage() + ".modular." + contextConfig.getModuleName() + ".service" + ".I" + contextConfig.getEntityName() + "Service");

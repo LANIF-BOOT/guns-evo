@@ -6,7 +6,6 @@ layui.use(["layer", "ztree", "form", "ax"], function() {
   var $ZTree = layui.ztree;
 
   form.on("select(tableName)", function(data) {
-    console.log(data);
     var preSize = $("#ignoreTabelPrefix").val().length;
     $("#tableName").val(data.value);
     $("#className").val(Feng.underLineToCamel(data.value.substring(preSize)));
@@ -14,6 +13,15 @@ layui.use(["layer", "ztree", "form", "ax"], function() {
 
   //监听提交
   form.on("submit(formDemo)", function(data) {
+    if (!data.field.tableName) {
+      Feng.info("请选择要生成的表");
+      return false;
+    }
+    if ($("#codeForm input[name=templateName]:checked").length == 0) {
+      Feng.info("请选择模板");
+      return false;
+    }
+
     $("#codeForm input[name=templateName]:checked").each(function() {
       data.field[$(this).val()] = true;
     });
