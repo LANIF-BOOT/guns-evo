@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.generator.config.po.TableFill;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 
@@ -48,6 +49,7 @@ public class WebGeneratorConfig extends AbstractGeneratorConfig {
         globalConfig.setBaseColumnList(true);
         globalConfig.setOpen(false);
         globalConfig.setActiveRecord(true);
+        globalConfig.setIdType(IdType.ID_WORKER);
         
         contextConfig.setProPackage(genQo.getProjectPackage());
         contextConfig.setCoreBasePackage(genQo.getCorePackage());

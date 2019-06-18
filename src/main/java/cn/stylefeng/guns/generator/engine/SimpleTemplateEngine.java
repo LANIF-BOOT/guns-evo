@@ -29,11 +29,19 @@ public class SimpleTemplateEngine extends GunsTemplateEngine {
     }
 
     @Override
-    protected void generatePageInfoJs() {
-        String path = StrUtil.format(super.getContextConfig().getProjectPath() + getPageConfig().getPageInfoJsPathTemplate(),
+    protected void generatePageAddJs() {
+        String path = StrUtil.format(super.getContextConfig().getProjectPath() + getPageConfig().getPageAddJsPathTemplate(),
                 super.getContextConfig().getBizEnName(), super.getContextConfig().getBizEnName());
-        generateFile(super.getContextConfig().getTemplatePrefixPath() + "/page_info.js.btl", path);
-        System.out.println("生成页面详情js成功!");
+        generateFile(super.getContextConfig().getTemplatePrefixPath() + "/page_add.js.btl", path);
+        System.out.println("生成新增页js成功!");
+    }
+    
+    @Override
+    protected void generatePageEditJs() {
+        String path = StrUtil.format(super.getContextConfig().getProjectPath() + getPageConfig().getPageEditJsPathTemplate(),
+                super.getContextConfig().getBizEnName(), super.getContextConfig().getBizEnName());
+        generateFile(super.getContextConfig().getTemplatePrefixPath() + "/page_edit.js.btl", path);
+        System.out.println("生成修改页js成功!");
     }
 
     @Override
@@ -41,7 +49,7 @@ public class SimpleTemplateEngine extends GunsTemplateEngine {
         String path = StrUtil.format(super.getContextConfig().getProjectPath() + getPageConfig().getPageJsPathTemplate(),
                 super.getContextConfig().getBizEnName(), super.getContextConfig().getBizEnName());
         generateFile(super.getContextConfig().getTemplatePrefixPath() + "/page.js.btl", path);
-        System.out.println("生成页面js成功!");
+        System.out.println("生成主页面js成功!");
     }
 
     @Override
