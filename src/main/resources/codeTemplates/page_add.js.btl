@@ -1,98 +1,35 @@
 /**
- * 初始化${context.bizChName}详情对话框
+ * ${context.bizChName}新增对话框
  */
 var ${context.bizEnBigName}InfoDlg = {
-    ${context.bizEnName}InfoData : {}
+    data: {
+    }
 };
 
-/**
- * 清除数据
- */
-${context.bizEnBigName}InfoDlg.clearData = function() {
-    this.${context.bizEnName}InfoData = {};
-}
+layui.use(['layer', 'form', 'admin', 'ax'], function () {
+    var $ = layui.jquery;
+    var $ax = layui.ax;
+    var form = layui.form;
+    var admin = layui.admin;
+    var layer = layui.layer;
 
-/**
- * 设置对话框中的数据
- *
- * @param key 数据的名称
- * @param val 数据的具体值
- */
-${context.bizEnBigName}InfoDlg.set = function(key, val) {
-    this.${context.bizEnName}InfoData[key] = (typeof val == "undefined") ? $("#" + key).val() : val;
-    return this;
-}
+    // 让当前iframe弹层高度适应
+    admin.iframeAuto();
 
-/**
- * 设置对话框中的数据
- *
- * @param key 数据的名称
- * @param val 数据的具体值
- */
-${context.bizEnBigName}InfoDlg.get = function(key) {
-    return $("#" + key).val();
-}
+    // 表单提交事件
+    form.on('submit(btnSubmit)', function (data) {
+        var ajax = new $ax(Feng.ctxPath + "/${context.bizEnName}/add", function (data) {
+            Feng.success("添加成功！");
 
-/**
- * 关闭此对话框
- */
-${context.bizEnBigName}InfoDlg.close = function() {
-    parent.layer.close(window.parent.${context.bizEnBigName}.layerIndex);
-}
+            //传给上个页面，刷新table用
+            admin.putTempData('formOk', true);
 
-/**
- * 收集数据
- */
-${context.bizEnBigName}InfoDlg.collectData = function() {
-    this
-    <% for(item in table.fields!){ %>
-    <% if(itemLP.last != true){ %>
-    .set('${item.propertyName}')
-    <% }else{ %>
-    .set('${item.propertyName}');
-    <% }} %>
-}
-
-/**
- * 提交添加
- */
-${context.bizEnBigName}InfoDlg.addSubmit = function() {
-
-    this.clearData();
-    this.collectData();
-
-    //提交信息
-    var ajax = new $ax(Feng.ctxPath + "/${context.bizEnName}/add", function(data){
-        Feng.success("添加成功!");
-        window.parent.${context.bizEnBigName}.table.refresh();
-        ${context.bizEnBigName}InfoDlg.close();
-    },function(data){
-        Feng.error("添加失败!" + data.responseJSON.message + "!");
+            //关掉对话框
+            admin.closeThisDialog();
+        }, function (data) {
+            Feng.error("添加失败！" + data.responseJSON.message)
+        });
+        ajax.set(data.field);
+        ajax.start();
     });
-    ajax.set(this.${context.bizEnName}InfoData);
-    ajax.start();
-}
-
-/**
- * 提交修改
- */
-${context.bizEnBigName}InfoDlg.editSubmit = function() {
-
-    this.clearData();
-    this.collectData();
-
-    //提交信息
-    var ajax = new $ax(Feng.ctxPath + "/${context.bizEnName}/update", function(data){
-        Feng.success("修改成功!");
-        window.parent.${context.bizEnBigName}.table.refresh();
-        ${context.bizEnBigName}InfoDlg.close();
-    },function(data){
-        Feng.error("修改失败!" + data.responseJSON.message + "!");
-    });
-    ajax.set(this.${context.bizEnName}InfoData);
-    ajax.start();
-}
-
-$(function() {
-
 });

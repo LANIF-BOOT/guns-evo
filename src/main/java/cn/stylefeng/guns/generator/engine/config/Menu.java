@@ -59,7 +59,7 @@ public class Menu extends Model<Menu> {
     /**
      * 是否是菜单（1：是  0：不是）
      */
-    private Integer ismenu;
+    private String ismenu;
     /**
      * 备注
      */
@@ -67,7 +67,7 @@ public class Menu extends Model<Menu> {
     /**
      * 菜单状态 :  1:启用   0:不启用
      */
-    private Integer status;
+    private String status;
     /**
      * 是否打开:    1:打开   0:不打开
      */
@@ -146,28 +146,12 @@ public class Menu extends Model<Menu> {
         this.levels = levels;
     }
 
-    public Integer getIsmenu() {
-        return ismenu;
-    }
-
-    public void setIsmenu(Integer ismenu) {
-        this.ismenu = ismenu;
-    }
-
     public String getTips() {
         return tips;
     }
 
     public void setTips(String tips) {
         this.tips = tips;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
     }
 
     public Integer getIsopen() {
@@ -201,4 +185,32 @@ public class Menu extends Model<Menu> {
                 ", isopen=" + isopen +
                 "}";
     }
+
+	/**
+	 * @return the ismenu
+	 */
+	public String getIsmenu() {
+		return ismenu;
+	}
+
+	/**
+	 * @param ismenu the ismenu to set
+	 */
+	public void setIsmenu(String ismenu) {
+		this.ismenu = ismenu;
+	}
+
+	/**
+	 * @return the status
+	 */
+	public String getStatus() {
+		return status;
+	}
+
+	/**
+	 * @param status the status to set
+	 */
+	public void setStatus(String status) {
+		this.status = status;
+	}
 }

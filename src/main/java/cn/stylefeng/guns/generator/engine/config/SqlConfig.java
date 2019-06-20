@@ -9,6 +9,7 @@ import java.util.List;
 
 import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 
+import cn.stylefeng.guns.core.common.constant.state.CommonStatus;
 import cn.stylefeng.roses.core.util.ToolUtil;
 import cn.stylefeng.roses.kernel.model.enums.YesOrNotEnum;
 
@@ -61,8 +62,8 @@ public class SqlConfig {
         } else {
             menu.setLevels(2);
         }
-        menu.setIsmenu(YesOrNotEnum.Y.getCode());
-        menu.setStatus(1);
+        menu.setIsmenu("Y");
+        menu.setStatus(CommonStatus.ENABLE.getCode());
         menu.setIsopen(0);
         menus.add(menu);
 
@@ -110,8 +111,8 @@ public class SqlConfig {
         menu.setIcon("");
         menu.setNum(99);
         menu.setLevels(parentMenu.getLevels() + 1);
-        menu.setIsmenu(YesOrNotEnum.N.getCode());
-        menu.setStatus(1);
+        menu.setIsmenu("N");
+        menu.setStatus(CommonStatus.ENABLE.getCode());
         menu.setIsopen(0);
         return menu;
     }
