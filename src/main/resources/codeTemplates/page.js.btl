@@ -42,7 +42,7 @@ layui.use(['table', 'admin', 'ax'], function () {
         admin.putTempData('formOk', false);
         top.layui.admin.open({
             type: 2,
-            title: '添加部门',
+            title: '添加',
             content: Feng.ctxPath + '/${context.bizEnName}/${context.bizEnName}_add',
             end: function () {
                 admin.getTempData('formOk') && table.reload(${context.bizEnBigName}.tableId);
@@ -59,7 +59,7 @@ layui.use(['table', 'admin', 'ax'], function () {
         admin.putTempData('formOk', false);
         top.layui.admin.open({
             type: 2,
-            title: '修改部门',
+            title: '修改',
             content: Feng.ctxPath + '/${context.bizEnName}/${context.bizEnName}_update?${context.bizEnName}Id=' + data.${context.bizEnName}Id,
             end: function () {
                 admin.getTempData('formOk') && table.reload(${context.bizEnBigName}.tableId);
@@ -83,7 +83,7 @@ layui.use(['table', 'admin', 'ax'], function () {
             ajax.set("${context.bizEnName}Id", data.${context.bizEnName}Id);
             ajax.start();
         };
-        Feng.confirm("是否删除部门 " + data.simpleName + "?", operation);
+        Feng.confirm("是否删除这条数据？", operation);
     };
 
     /**
