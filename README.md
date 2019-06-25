@@ -1,87 +1,16 @@
 <p align="center">
     <img src="https://images.gitee.com/uploads/images/2019/0109/214218_d2aa949b_551203.png" width="300">
     <br>      
-    <br>      
-    <p align="center">
-        Guns基于SpringBoot 2，致力于做更简洁的后台管理系统。Guns项目代码简洁，注释丰富，上手容易，同时Guns包含许多基础模块(用户管理，角色管理，部门管理，字典管理等10个模块)，可以直接作为一个后台管理系统的脚手架!
-        <br>      
-        <br>      
-        <span>
-            <span>
-                Guns官方交流群：254550081(满)   684163663(满)   207434260(满)(三个群已满，扫下方二维码加官方微信群)
-            </span>
-        </span>
-        <br>
-        <br>
-        <a href="https://getbootstrap.com/">
-            <img src="https://img.shields.io/badge/easyweb-3.1.1-green.svg" alt="bootstrap">
-        </a> 
-        <a href="https://getbootstrap.com/">
-            <img src="https://img.shields.io/badge/layui-2.4.5-blue.svg" alt="bootstrap">
-        </a>  
-        +
-        <a href="http://spring.io/projects/spring-boot">
-            <img src="https://img.shields.io/badge/spring--boot-2.1.1-green.svg" alt="spring-boot">
-        </a>
-        <a href="http://mp.baomidou.com">
-            <img src="https://img.shields.io/badge/mybatis--plus-3.0-blue.svg" alt="mybatis-plus">
-        </a>  
-        <a href="http://ibeetl.com/">
-            <img src="https://img.shields.io/badge/beetl-2.9.3-yellow.svg" alt="beetl">
-        </a> 
-        <a href="https://shiro.apache.org/">
-            <img src="https://img.shields.io/badge/shiro-1.4.0-blue.svg" alt="shiro">
-        </a>      
-    </p>
 </p>
 
 -----------------------------------------------------------------------------------------------
 
-### 在线demo
-账号密码：admin/111111，地址：http://demo.stylefeng.cn
-
-阿里云5折优惠券，[点我领取](https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=p4kqz45e)
-
-### Guns 企业版
-Guns企业级快速开发平台，开箱即用，详情点击[https://www.stylefeng.cn](https://www.stylefeng.cn)
-
-买企业版送最新Guns技术文档和视频教程，[点击查看技术文档](https://gitee.com/stylefeng/guns/wikis/pages?title=Guns%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3&parent=)，[点击查看视频教程](https://gitee.com/stylefeng/guns/wikis/pages?title=Guns%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B&parent=)
-
-### Guns&Roses架构师视频
-深入了解Guns的核心，spring cloud微服务，docker等技术，详情点击[https://www.stylefeng.cn/video/roses](https://www.stylefeng.cn/video/roses)
-
-### 扫码关注官方公众号和官方微信群
-<table>
-    <tr>
-        <td>官方公众号</td>
-        <td><img src="https://images.gitee.com/uploads/images/2019/0415/104911_9bc924a5_551203.png" width="120"/></td>
-        <td>扫码邀请入群</td>
-        <td><img src="https://images.gitee.com/uploads/images/2019/0419/103622_d6e9fa5d_551203.png" width="120"/></td>
-    </tr>
-</table>
-
-### Guns历史版本
-
-| 版本名称 | 说明 | 地址 |
-| :---: | :---: | :---: |
-| Guns企业版 | 付费授权，包含最新代码生成器，支持微服务，SSO，工作流等等 | https://www.stylefeng.cn/ |
-| Guns旗舰版 v2.5 | 最新开源版本，master分支 | https://gitee.com/stylefeng/guns |
-| Guns v5.1 | Guns经典版的最新版，采用bootstrap 3 | https://gitee.com/stylefeng/guns/tree/v5.1-final |
-
-### 版权声明
-Guns采用新的定制协议：您可以随意下载，学习，或使用Guns，但禁止二次包装出售以及任何商业行为，如需商用请购买授权。
-
 ### Guns前端模板
-Guns最新旗舰版，所用前端模板为EasyWeb后台开发框架,官网地址为：[https://easyweb.vip/](https://easyweb.vip/)，使用时已征求作者允许。
+Guns最新旗舰版，所用前端模板为EasyWeb后台开发框架,官网地址为：[https://easyweb.vip/](https://easyweb.vip/)，使用时已征求作者允许。 
 
-### 如有帮助，请多star
-Guns从2017年开源以来，从最初的1.0版本发展到现在的旗舰版2.0，中间历经了十几个版本，一直坚持更新，尽力做到更好！如果Guns对您有所帮助，请`star`一下项目！支持一下作者！感谢！
+https://demo.easyweb.vip/iframe/
 
-### Guns微服务版本
-
-Guns的核心是roses-kernel项目[https://gitee.com/stylefeng-Roses/roses-kernel](https://gitee.com/stylefeng-Roses/roses-kernel)，提供对spring cloud的支持。
-
-[Roses框架](https://gitee.com/stylefeng/roses)基于Spring Boot 2和Spring Cloud Finchley.RELEASE，整合Eureka + Hystrix + Ribbon + Feign + Zuul，更符合企业级的分布式和服务化解决方案，Roses拥有高效率的开发体验，提供可靠消息最终一致性分布式事务解决方案，提供基于调用链的服务治理，提供可靠的服务异常定位方案（Log + Trace）等等，一个分布式框架不仅需要构建高效稳定的底层开发框架，更需要解决分布式带来的种种挑战！
+https://whvse.gitee.io/easywebpage/docs/#/?id=easyweb-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3
 
 ### 管理系统功能
 1.用户管理 2.角色管理 3.部门管理 4.菜单管理 5.字典管理 6.业务日志 7.登录日志 8.监控管理 9.通知管理 10.代码生成（旗舰版目前还没完成）
@@ -192,39 +121,3 @@ jwt token鉴权机制是指若需要请求服务器接口，必须通过AuthCont
 
 ### 签名机制
 签名机制是指客户端向服务端传输数据中，对传输数据进行md5加密，并且加密过程中利用Auth接口返回的随机字符串进行混淆加密，并把md5值同时附带给服务端，服务端通获取数据之后对数据再进行一次md5加密，若加密结果和客户端传来的数据一致，则认定客户端请求的数据是没有被篡改的，若不一致，则认为被加密的数据是被篡改的
-
-### Guns经典版效果图
-<table>
-    <tr>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0604/194616_36ed7fd6_551203.png"/></td>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0604/194623_a0761bc3_551203.png"/></td>
-    </tr>
-    <tr>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0604/194630_640dfd35_551203.png"/></td>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0526/104015_bdb14c74_551203.png"/></td>
-    </tr>
-    <tr>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0516/000735_b83c5c46_551203.png"/></td>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0526/103734_bd3e8f6b_551203.png"/></td>
-    </tr>
-    <tr>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0604/194539_f9bb482a_551203.png"/></td>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0526/103746_6b4129ed_551203.png"/></td>
-    </tr>
-    <tr>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0526/103755_7729b916_551203.png"/></td>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0526/103801_b8216865_551203.png"/></td>
-    </tr>
-    <tr>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0526/103807_20bfb868_551203.png"/></td>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0526/103814_67e078bb_551203.png"/></td>
-    </tr>
-    <tr>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0526/103822_58fd5d91_551203.png"/></td>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0526/103827_d6218c74_551203.png"/></td>
-    </tr>
-</table>
-
-### stylefeng开源技术
-
-官网：https://www.stylefeng.cn/
