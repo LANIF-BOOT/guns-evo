@@ -10,6 +10,13 @@ layui.use(["layer", "ztree", "form", "ax"], function() {
     $("#tableName").val(data.value);
     $("#className").val(Feng.underLineToCamel(data.value.substring(preSize)));
   });
+  
+  $("#ignoreTabelPrefix").on("change", function(e) {
+	var preSize = $("#ignoreTabelPrefix").val().length;
+	var data = $("#tableName").val();
+	$("#tableName").val(data);
+    $("#className").val(Feng.underLineToCamel(data.substring(preSize)));
+  })
 
   //监听提交
   form.on("submit(formDemo)", function(data) {
@@ -21,12 +28,16 @@ layui.use(["layer", "ztree", "form", "ax"], function() {
       Feng.info("请选择模板");
       return false;
     }
+    if (!data.field.bizName) {
+      Feng.info("请填写业务名称");
+      return false;
+    }
 
     $("#codeForm input[name=templateName]:checked").each(function() {
       data.field[$(this).val()] = true;
     });
 
-    $.post("/code/generate", data.field, function() {
+    $.post("/manage/code/generate", data.field, function() {
       layer.msg("代码自动创建完成！");
     });
     return false;
@@ -46,7 +57,7 @@ layui.use(["layer", "ztree", "form", "ax"], function() {
     $("#parentMenuName").attr("value", Code.ztreeInstance.getSelectedVal());
   };
 
-  var ztree = new $ZTree("pcodeTree", "/menu/selectMenuTreeList");
+  var ztree = new $ZTree("pcodeTree", "/manage/menu/selectMenuTreeList");
   ztree.bindOnClick(Code.onClickDept);
   ztree.init();
   Code.ztreeInstance = ztree;
